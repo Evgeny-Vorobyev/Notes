@@ -26,3 +26,12 @@ def create_note():
     notes.append(note)
     save_notes(notes)
     print("Note successfully saved!")
+
+def list_notes():
+    for note in notes:
+        print(f"ID: {note['id']}")
+        print(f"Title: {note['title']}")
+        print(f"Body: {note['body']}")
+        print(f"Timestamp: {note['timestamp']}")
+        print()
+
