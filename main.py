@@ -35,3 +35,16 @@ def list_notes():
         print(f"Timestamp: {note['timestamp']}")
         print()
 
+def edit_note():
+    note_id = int(input("Enter the ID of the note you want to edit: "))
+    for note in notes:
+        if note['id'] == note_id:
+            new_title = input("Enter the new title: ")
+            new_body = input("Enter the new body: ")
+            note['title'] = new_title
+            note['body'] = new_body
+            note['timestamp'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            save_notes(notes)
+            print("Note successfully updated!")
+            return
+    print("Note not found.")
