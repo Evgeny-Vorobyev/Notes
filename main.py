@@ -48,3 +48,17 @@ def edit_note():
             print("Note successfully updated!")
             return
     print("Note not found.")
+
+def delete_note():
+    note_id = int(input("Enter the ID of the note you want to delete: "))
+    for note in notes:
+        if note['id'] == note_id:
+            notes.remove(note)
+            save_notes(notes)
+            print("Note successfully deleted!")
+            return
+    print("Note not found.")
+
+
+
+
